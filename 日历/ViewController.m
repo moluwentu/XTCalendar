@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "XTCalendar.h"
 
 @interface ViewController ()
+
+@property (nonatomic, assign)NSInteger offsetMonth;
 
 @end
 
@@ -17,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    XTCalendar *calendar = [[XTCalendar alloc]initWithHeaderBackGroundColor:[UIColor purpleColor] andLeftPoint:CGPointMake(5, 100)];
+//    calendar.
+    
+    [self.view addSubview:calendar];
+
 }
 
 - (void)didReceiveMemoryWarning {
