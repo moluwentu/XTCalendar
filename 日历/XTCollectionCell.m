@@ -8,8 +8,6 @@
 
 #import "XTCollectionCell.h"
 
-//#define toDayTextColorNotification @"toDayTextColorNotification"
-
 @implementation XTCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -45,14 +43,47 @@
         self.titleLabel.textColor = [UIColor lightGrayColor];
     }
     
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changTodayColor:) name:toDayTextColorNotification object:nil];
 }
 
-//- (void)changTodayColor:(NSNotification *)noti{
-//    if (self.calendar.isToday) {
-//         self.titleLabel.textColor = noti.object;
-//    }
-//}
+- (void)setTodayColor:(UIColor *)todayColor{
+    _todayColor = todayColor;
+    
+    if (self.calendar.isToday && todayColor != nil) {
+        self.titleLabel.textColor = todayColor;
+    }
+}
+
+- (void)setTodayBackColor:(UIColor *)todayBackColor{
+    _todayBackColor = todayBackColor;
+    
+    if (self.calendar.isToday && todayBackColor != nil) {
+        self.titleLabel.backgroundColor = todayBackColor;
+    }
+}
+
+- (void)setBeforeDayColor:(UIColor *)beforeDayColor{
+    _beforeDayColor = beforeDayColor;
+    
+    if (self.calendar.isBeforeDay && beforeDayColor != nil) {
+        self.titleLabel.textColor = beforeDayColor;
+    }
+}
+
+- (void)setBeforeDayBackColor:(UIColor *)beforeDayBackColor{
+    _beforeDayBackColor = beforeDayBackColor;
+    
+    if (self.calendar.isBeforeDay && beforeDayBackColor != nil) {
+        self.titleLabel.backgroundColor = beforeDayBackColor;
+    }
+}
+
+- (void)setEmptyColor:(UIColor *)emptyColor{
+    _emptyColor = emptyColor;
+    
+    if (self.calendar.text.length == 0 && emptyColor != nil) {
+        self.titleLabel.backgroundColor = emptyColor;
+    }
+}
 
 - (UILabel *)titleLabel{
     if (_titleLabel == nil) {

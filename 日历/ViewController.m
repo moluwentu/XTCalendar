@@ -22,8 +22,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     XTCalendar *calendar = [[XTCalendar alloc]initWithHeaderBackGroundColor:[UIColor purpleColor] andLeftPoint:CGPointMake(5, 100)];
-//    calendar.
-    
+//    calendar.todayColor = [UIColor yellowColor];
+//    calendar.todayBackColor = [UIColor greenColor];
+//    calendar.beforeDayBackColor = [UIColor blueColor];
+//    calendar.beforeDayColor = [UIColor orangeColor];
+//    calendar.emptyColor = [UIColor cyanColor];
     [self.view addSubview:calendar];
 
 }

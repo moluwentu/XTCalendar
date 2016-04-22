@@ -164,6 +164,11 @@ static NSString *const calendarCollectionID = @"calendarCollectionID";
     if (_datas.count > 0) {
         [self drawLineOnCalendar:indexPath.item];
     }
+    cell.todayColor = self.todayColor;
+    cell.todayBackColor = self.todayBackColor;
+    cell.beforeDayColor = self.beforeDayColor;
+    cell.beforeDayBackColor = self.beforeDayBackColor;
+    cell.emptyColor = self.emptyColor;
     
     return cell;
 }

@@ -10,8 +10,6 @@
 #import "XTCalendarHeaderView.h"
 #import "XTCalendarView.h"
 
-//#define toDayTextColorNotification @"toDayTextColorNotification"
-
 @interface XTCalendar ()
 
 @property (nonatomic, strong)XTCalendarHeaderView *headerView;
@@ -53,9 +51,37 @@
         [weakself.headerView changMonthInHeader:weakself.offsetMonth];
         [weakself.calendarView creatDataOffsetMonth:weakself.offsetMonth];
     };
-    
-//    [[NSNotificationCenter defaultCenter]postNotificationName:toDayTextColorNotification object:self.todayColor];
 
+}
+
+- (void)setTodayColor:(UIColor *)todayColor{
+    _todayColor = todayColor;
+    
+    self.calendarView.todayColor = todayColor;
+}
+
+- (void)setTodayBackColor:(UIColor *)todayBackColor{
+    _todayBackColor = todayBackColor;
+    
+    self.calendarView.todayBackColor = todayBackColor;
+}
+
+- (void)setBeforeDayColor:(UIColor *)beforeDayColor{
+    _beforeDayColor = beforeDayColor;
+    
+    self.calendarView.beforeDayColor = beforeDayColor;
+}
+
+- (void)setBeforeDayBackColor:(UIColor *)beforeDayBackColor{
+    _beforeDayBackColor = beforeDayBackColor;
+    
+    self.calendarView.beforeDayBackColor = beforeDayBackColor;
+}
+
+- (void)setEmptyColor:(UIColor *)emptyColor{
+    _emptyColor = emptyColor;
+    
+    self.calendarView.emptyColor = emptyColor;
 }
 
 - (XTCalendarHeaderView *)headerView{
