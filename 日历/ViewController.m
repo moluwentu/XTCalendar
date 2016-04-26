@@ -21,7 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    XTCalendar *calendar = [[XTCalendar alloc]initWithHeaderBackGroundColor:[UIColor purpleColor] andLeftPoint:CGPointMake(5, 100)];
+    
+    //个人技术原因，觉的图大小不对可以去calendar里面修改高度比例
+    XTCalendar *calendar = [[XTCalendar alloc]initWithHeraderBackGroundColor:[UIColor purpleColor] andFrame:CGRectMake(10, 100, 300, 350)];
 //    calendar.todayColor = [UIColor yellowColor];
 //    calendar.todayBackColor = [UIColor greenColor];
 //    calendar.beforeDayBackColor = [UIColor blueColor];

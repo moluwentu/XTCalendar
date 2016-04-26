@@ -10,7 +10,11 @@
 
 @interface XTCalendar : UIView
 
-- (instancetype)initWithHeaderBackGroundColor:(UIColor *)color andLeftPoint:(CGPoint)leftPoint;
+- (instancetype)initWithHeraderBackGroundColor:(UIColor *)color andFrame:(CGRect)totalFrame;
+
+//设置头部的高度,建议暂时不要用这个属性，因为日期高度是写死的，改这个很麻烦
+@property (nonatomic, assign)CGFloat headerViewHeight;
+
 //当天字体色
 @property (nonatomic, strong)UIColor *todayColor;
 //当天背景色

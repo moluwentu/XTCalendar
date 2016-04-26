@@ -132,7 +132,7 @@ static NSString *const calendarCollectionID = @"calendarCollectionID";
         }
     }
     
-    if (index <= 8) {
+    if (index <= 7) {
         UIView *HlineView = [[UIView alloc]initWithFrame:CGRectMake(index * self.bounds.size.width / 7 , 0, 1, self.bounds.size.height)];
         HlineView.backgroundColor = [UIColor darkGrayColor];
         HlineView.tag = lineMarkTag;
@@ -179,7 +179,7 @@ static NSString *const calendarCollectionID = @"calendarCollectionID";
         flowlayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         flowlayout.minimumLineSpacing = 0;
         flowlayout.minimumInteritemSpacing = 0;
-        flowlayout.itemSize = CGSizeMake((self.bounds.size.width - itemWidth * 2) / 7 + 7, itemWidth);
+        flowlayout.itemSize = CGSizeMake(self.bounds.size.width / 7 , itemWidth);
         _calendarCollection = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:flowlayout];
         _calendarCollection.backgroundColor = [UIColor clearColor];
         

@@ -21,9 +21,8 @@
 
 @implementation XTCalendar
 
-- (instancetype)initWithHeaderBackGroundColor:(UIColor *)color andLeftPoint:(CGPoint)leftPoint{
-    if (self == [super init]) {
-        self.frame = CGRectMake(leftPoint.x, leftPoint.y, [UIScreen mainScreen].bounds.size.width - 10, 340);
+- (instancetype)initWithHeraderBackGroundColor:(UIColor *)color andFrame:(CGRect)totalFrame{
+    if (self == [super initWithFrame:totalFrame]) {
         self.headerView.backgroundColor = color;
         [self setUI];
     }
@@ -51,7 +50,13 @@
         [weakself.headerView changMonthInHeader:weakself.offsetMonth];
         [weakself.calendarView creatDataOffsetMonth:weakself.offsetMonth];
     };
+}
 
+- (void)setHeaderViewHeight:(CGFloat)headerViewHeight{
+    _headerViewHeight = headerViewHeight;
+    
+    [self.headerView setFrame:CGRectMake(0, 0, self.frame.size.width, headerViewHeight)];
+    [self.calendarView setFrame:CGRectMake(0, headerViewHeight, self.frame.size.width,  self.frame.size.height - headerViewHeight)];
 }
 
 - (void)setTodayColor:(UIColor *)todayColor{
@@ -86,14 +91,14 @@
 
 - (XTCalendarHeaderView *)headerView{
     if (_headerView == nil) {
-        _headerView = [[XTCalendarHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 40)];
+            _headerView = [[XTCalendarHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width + 1, self.frame.size.height * 0.1)];
     }
     return _headerView;
 }
 
 - (XTCalendarView *)calendarView{
     if (_calendarView == nil) {
-        _calendarView = [[XTCalendarView alloc]initWithFrame:CGRectMake(0, 40, self.frame.size.width, 300)];
+             _calendarView = [[XTCalendarView alloc]initWithFrame:CGRectMake(0, self.frame.size.height * 0.1, self.frame.size.width, self.frame.size.height * 0.9)];
     }
     return _calendarView;
 }
