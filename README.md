@@ -3,4 +3,4 @@
 
 目前还在完善中~
 
-![](http://chuantu.biz/t4/9/1462524025x3738746565.png)
+<img src=http://chuantu.biz/t4/9/1462524025x3738746565.png />
