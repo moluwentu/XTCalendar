@@ -10,6 +10,8 @@
 #import "XTCalendarView.h"
 #import "NSDate+Calendar.h"
 
+#define BTNHeight 20
+
 @interface XTCalendarHeaderView()
 
 @property (nonatomic, strong)UIButton *pulsBtn;
@@ -65,7 +67,7 @@
 
 - (UIButton *)pulsBtn{
     if (_pulsBtn == nil) {
-        _pulsBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.bounds.size.width - 25, 10, 20, 20)];
+        _pulsBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.bounds.size.width - 25, (self.bounds.size.height - BTNHeight) / 2, BTNHeight, BTNHeight)];
         [_pulsBtn setImage:[UIImage imageNamed:@"plusacc"] forState:UIControlStateNormal];
         [_pulsBtn addTarget:self action:@selector(puluBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -74,7 +76,7 @@
 
 - (UIButton *)reduceBtn{
     if (_reduceBtn == nil) {
-        _reduceBtn = [[UIButton alloc]initWithFrame:CGRectMake(5, 10, 20, 20)];
+        _reduceBtn = [[UIButton alloc]initWithFrame:CGRectMake(5, (self.bounds.size.height - BTNHeight) / 2, BTNHeight, BTNHeight)];
         [_reduceBtn setImage:[UIImage imageNamed:@"reduceacc"] forState:UIControlStateNormal];
         [_reduceBtn addTarget:self action:@selector(reduceBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }

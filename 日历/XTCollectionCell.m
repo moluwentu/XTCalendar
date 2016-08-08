@@ -17,6 +17,7 @@
     return self;
 }
 
+#pragma mark -- setter
 - (void)setCalendar:(CalendarModel *)calendar{
     _calendar = calendar;
     
