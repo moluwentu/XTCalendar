@@ -11,7 +11,7 @@
 @implementation XTCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    if (self == [super initWithFrame: frame]) {
+    if (self = [super initWithFrame: frame]) {
         [self addSubview:self.titleLabel];
     }
     return self;

@@ -22,7 +22,7 @@
 @implementation XTCalendar
 
 - (instancetype)initWithHeraderBackGroundColor:(UIColor *)color andFrame:(CGRect)totalFrame{
-    if (self == [super initWithFrame:totalFrame]) {
+    if (self = [super initWithFrame:totalFrame]) {
         self.headerView.backgroundColor = color;
         [self setUI];
     }

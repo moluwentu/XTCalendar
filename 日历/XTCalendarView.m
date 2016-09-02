@@ -29,7 +29,7 @@ static NSString *const calendarCollectionID = @"calendarCollectionID";
 @implementation XTCalendarView
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    if (self == [super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         
         _datas = [NSMutableArray array];
         [self initCollection];
